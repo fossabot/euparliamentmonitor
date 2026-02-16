@@ -59,7 +59,7 @@ export function writeFile(filepath, content) {
  */
 export function containsXSSVulnerability(html) {
   const xssPatterns = [
-    /<script[^>]*>.*?<\/script>/gi,
+    /<script[^>]*>.*?<\/script\s*>/gis, // Match script tags with optional whitespace before >
     /javascript:/gi,
     /on\w+\s*=\s*["'][^"']*["']/gi,
     /<iframe/gi,
