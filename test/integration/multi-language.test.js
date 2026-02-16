@@ -7,7 +7,7 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { generateArticleHTML } from '../../scripts/article-template.js';
-import { createTempDir, cleanupTempDir, validateHTML, extractHTMLMetadata } from '../helpers/test-utils.js';
+import { createTempDir, cleanupTempDir, validateHTML, extractHTMLMetadata, writeFile } from '../helpers/test-utils.js';
 
 const ALL_LANGUAGES = ['en', 'de', 'fr', 'es', 'it', 'nl', 'pl', 'pt', 'ro', 'sv', 'da', 'fi', 'el', 'hu'];
 
@@ -75,7 +75,6 @@ describe('Multi-Language Support Integration', () => {
 
     it('should save articles in correct filename format', () => {
       const newsDir = path.join(tempDir, 'news');
-      fs.mkdirSync(newsDir, { recursive: true });
 
       ALL_LANGUAGES.forEach((lang) => {
         const articleOptions = {
@@ -93,7 +92,8 @@ describe('Multi-Language Support Integration', () => {
         const filename = `${articleOptions.date}-${articleOptions.slug}-${lang}.html`;
         const filepath = path.join(newsDir, filename);
 
-        fs.writeFileSync(filepath, html, 'utf-8');
+        // Use writeFile helper which automatically creates directories
+        writeFile(filepath, html);
 
         // Verify file exists
         expect(fs.existsSync(filepath)).toBe(true);
