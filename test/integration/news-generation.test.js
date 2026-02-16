@@ -3,7 +3,9 @@
  * Tests end-to-end article generation with placeholder content
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+/* eslint-disable no-undef */
+
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { generateArticleHTML } from '../../scripts/article-template.js';

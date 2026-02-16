@@ -70,7 +70,7 @@ export class MockMCPServer {
   /**
    * Handle tool call
    */
-  _handleToolCall(toolName, args) {
+  _handleToolCall(toolName) {
     switch (toolName) {
       case 'get_plenary_sessions':
         return {

@@ -6,7 +6,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { generateArticleHTML } from '../../scripts/article-template.js';
 import { mockArticleMetadata, mockArticleContent, mockSources } from '../fixtures/ep-data.js';
-import { validateHTML, extractHTMLMetadata, containsXSSVulnerability } from '../helpers/test-utils.js';
+import { validateHTML } from '../helpers/test-utils.js';
 
 describe('article-template', () => {
   describe('generateArticleHTML', () => {

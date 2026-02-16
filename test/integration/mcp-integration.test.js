@@ -3,10 +3,12 @@
  * Tests MCP client with mock server and data flow
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+/* eslint-disable no-undef */
+
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { createMockMCPClient } from '../helpers/mock-mcp-server.js';
 import { generateArticleHTML } from '../../scripts/article-template.js';
-import { mockPlenarySession, mockParliamentaryQuestions, mockDocuments } from '../fixtures/ep-data.js';
+import { mockPlenarySession } from '../fixtures/ep-data.js';
 
 describe('MCP Integration', () => {
   let mcpClient;

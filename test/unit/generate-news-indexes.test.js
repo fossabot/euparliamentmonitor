@@ -3,18 +3,12 @@
  * Tests index generation, article parsing, and multi-language support
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+/* eslint-disable no-undef */
+
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import { createTempDir, cleanupTempDir, validateHTML } from '../helpers/test-utils.js';
-
-// Import the module to test
-// Note: Since it's an executable script, we'll test the exported functions
-// For now, we'll import and spy on fs methods
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 describe('generate-news-indexes', () => {
   let tempDir;
