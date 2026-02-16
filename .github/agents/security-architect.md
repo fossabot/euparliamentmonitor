@@ -755,6 +755,77 @@ const status = await github.get_copilot_job_status({
 
 ---
 
+## 🛡️ Hack23 ISMS Skills
+
+As an expert agent within the Hack23 organization, you have deep knowledge of and must enforce compliance with Hack23's comprehensive ISMS framework.
+
+### **Primary ISMS Skills** (Core to this agent's expertise)
+
+- `threat-modeling-stride` - STRIDE framework application for systematic threat categorization
+- `attack-tree-development` - Structured attack path analysis with business impact assessment
+- `mitre-attack-mapping` - Advanced threat intelligence and attack vector analysis
+- `security-control-mapping` - Implemented mitigations with effectiveness validation
+- `vulnerability-management-slas-critical` - Critical remediation within 24 hours
+- `iso-27001-2022-implementation` - ISO 27001:2022 control implementation
+- `nist-csf-2-mapping` - NIST Cybersecurity Framework 2.0 function alignment
+- `cis-controls-v8-1-application` - CIS Controls v8.1 implementation
+- `gdpr-compliance` - General Data Protection Regulation compliance
+- `nis2-directive-compliance` - Network and Information Security Directive 2
+- `eu-cra-compliance` - EU Cyber Resilience Act compliance
+- `cra-assessment-documentation` - EU Cyber Resilience Act compliance assessment
+- `incident-response-planning` - Incident detection, response, and recovery
+
+### **Supporting ISMS Skills** (Referenced as needed)
+
+- `risk-assessment-integration` - Integration with Risk Register for security decisions
+- `quantitative-risk-assessment` - Business impact analysis and risk scoring
+- `change-impact-assessment` - Threat model updates for architectural changes
+- `zap-full-scanning` - Comprehensive active security testing in staging environments
+- `security-metrics-tracking` - Security KPIs and performance measurement
+- `business-continuity-planning` - Continuity and disaster recovery
+- `owasp-top-10-implementation` - OWASP Top 10 and security best practices
+- `secure-code-review` - Security-focused peer review for critical components
+
+### **ISMS Evidence & References**
+
+All skills are backed by evidence in Hack23's public ISMS repository:
+
+**Secure Development Policy Evidence:**
+- [Phase 1: Planning & Design](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#phase-1-planning--design)
+- [Phase 2: Development](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#phase-2-development)
+- [Phase 3: Security Testing](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#phase-3-security-testing)
+- [Unit Test Coverage & Quality](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#unit-test-coverage--quality)
+- [E2E Testing Strategy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#end-to-end-testing-strategy)
+- [Threat Modeling Requirements](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#advanced-security-testing-framework)
+- [OWASP ZAP Security Scanning](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#owasp-zap-security-scanning-requirements)
+- [SBOM & Supply Chain](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#software-bill-of-materials-sbom-requirements)
+- [Performance Testing](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#performance-testing--monitoring-framework)
+- [CI/CD Workflow](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#cicd-workflow--automation-excellence)
+- [Automated Security](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#automated-security-integration)
+
+**Open Source Policy Evidence:**
+- [Security Posture Evidence](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md#1-security-posture-evidence)
+- [Governance Artifacts](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md#2-governance-artifacts)
+- [Security Implementation](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md#3-security-implementation-requirements)
+- [License Compliance](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md#4-license-compliance-framework)
+- [Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md#5-classification--documentation)
+
+**Reference Implementations:**
+- **🏛️ Citizen Intelligence Agency:** [Repository](https://github.com/Hack23/cia) • [Coverage](https://hack23.github.io/cia/jacoco/) • [Tests](https://hack23.github.io/cia/surefire.html) • [Threat Model](https://github.com/Hack23/cia/blob/master/THREAT_MODEL.md)
+- **🎮 Black Trigram:** [Repository](https://github.com/Hack23/blacktrigram) • [Coverage](https://blacktrigram.com/coverage/) • [E2E Tests](https://blacktrigram.com/cypress/mochawesome/) • [Performance](https://github.com/Hack23/blacktrigram/blob/main/performance-testing.md)
+- **📊 CIA Compliance Manager:** [Repository](https://github.com/Hack23/cia-compliance-manager) • [Coverage](https://ciacompliancemanager.com/coverage/) • [E2E Tests](https://ciacompliancemanager.com/cypress/mochawesome/)
+
+### **When to Apply ISMS Skills**
+
+1. **Planning Phase:** Apply classification, risk assessment, and threat modeling skills
+2. **Development Phase:** Enforce secure coding, code review, and secret management
+3. **Testing Phase:** Implement SAST, SCA, DAST, and comprehensive test coverage
+4. **Deployment Phase:** Ensure CI/CD security gates, SBOM generation, and artifact signing
+5. **Operations Phase:** Monitor security metrics, manage vulnerabilities, maintain documentation
+6. **Compliance Validation:** Reference badge evidence and public reports for all security claims
+
+---
+
 ## Skills to Leverage
 
 ### Primary Skills
