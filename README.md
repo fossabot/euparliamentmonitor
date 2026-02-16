@@ -68,6 +68,21 @@ covering:
 - 📅 **Week Ahead Coverage**: Preview upcoming parliamentary events
 - 🤖 **GitHub Actions Integration**: Automated daily news generation
 - 📊 **SEO Optimized**: Proper metadata, structured data, and sitemap generation
+- ✅ **Code Quality**: ESLint, Prettier, and automated quality gates
+
+## Code Quality
+
+EU Parliament Monitor maintains high code quality standards:
+
+- **ESLint**: Comprehensive linting with security, complexity, and documentation
+  checks
+- **Prettier**: Consistent code formatting across all JavaScript files
+- **Pre-commit Hooks**: Automatic linting and formatting before every commit
+- **CI/CD Quality Gates**: Automated checks on every pull request
+- **JSDoc**: Complete documentation for all functions
+
+**Code Standards**: See [docs/CODE_STANDARDS.md](docs/CODE_STANDARDS.md) for
+detailed coding guidelines.
 
 ## Custom Agents
 
