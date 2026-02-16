@@ -120,7 +120,8 @@ export class MockMCPServer {
   /**
    * Mock getPlenarySessions
    */
-  async getPlenarySessions() {
+  async getPlenarySessions(options = {}) {
+    this.requests.push({ method: 'tools/call', params: { name: 'get_plenary_sessions', arguments: options } });
     return {
       content: [
         {
@@ -134,7 +135,8 @@ export class MockMCPServer {
   /**
    * Mock searchDocuments
    */
-  async searchDocuments() {
+  async searchDocuments(options = {}) {
+    this.requests.push({ method: 'tools/call', params: { name: 'search_documents', arguments: options } });
     return {
       content: [
         {
@@ -148,7 +150,8 @@ export class MockMCPServer {
   /**
    * Mock getParliamentaryQuestions
    */
-  async getParliamentaryQuestions() {
+  async getParliamentaryQuestions(options = {}) {
+    this.requests.push({ method: 'tools/call', params: { name: 'get_parliamentary_questions', arguments: options } });
     return {
       content: [
         {

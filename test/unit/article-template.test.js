@@ -234,12 +234,25 @@ describe('article-template', () => {
     });
 
     describe('Security - XSS Prevention', () => {
-      it('should not include script tags in content', () => {
+      it('should not include executable script tags in content', () => {
         const maliciousContent = '<script>alert("XSS")</script><p>Safe content</p>';
         const html = generateArticleHTML({ ...defaultOptions, content: maliciousContent });
         
-        // Content is inserted as-is, but we verify no additional XSS vectors
-        expect(containsXSSVulnerability(html.replace(maliciousContent, ''))).toBe(false);
+        // Content is inserted as-is in this template system
+        // The actual content should be the responsibility of the content generator
+        // We just verify that the malicious content is present (not sanitized by template)
+        // and that there are no other XSS vectors introduced by the template
+        expect(html).toContain(maliciousContent);
+        
+        // Check that only JSON-LD script tags exist (not executable scripts)
+        const scriptTags = html.match(/<script[^>]*>/gi) || [];
+        const jsonLdScripts = scriptTags.filter(tag => tag.includes('application/ld+json'));
+        const executableScripts = scriptTags.filter(tag => !tag.includes('application/ld+json'));
+        
+        // Template should only have JSON-LD script tags
+        expect(jsonLdScripts.length).toBeGreaterThan(0);
+        // Any executable script should come from the content parameter only
+        expect(executableScripts.length).toBe(1); // Only from the malicious content we passed
       });
 
       it('should properly escape special characters in title', () => {

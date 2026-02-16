@@ -334,6 +334,17 @@ function generateMockIndexHTML(lang, articles) {
     en: 'English',
     de: 'Deutsch',
     fr: 'Français',
+    es: 'Español',
+    it: 'Italiano',
+    nl: 'Nederlands',
+    pl: 'Polski',
+    pt: 'Português',
+    ro: 'Română',
+    sv: 'Svenska',
+    da: 'Dansk',
+    fi: 'Suomi',
+    el: 'Ελληνικά',
+    hu: 'Magyar',
   };
 
   const noArticles = {
