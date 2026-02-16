@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-02-16T12:51:59.976Z",
+  "generated": 1,
+  "errors": 0,
+  "articles": [
+    "2026-02-16-week-ahead-en.html"
+  ],
+  "results": [
+    {
+      "success": true,
+      "files": 1,
+      "slug": "2026-02-16-week-ahead"
+    }
+  ],
+  "usedMCP": false
+}
