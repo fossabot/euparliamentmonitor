@@ -36,6 +36,10 @@ export default defineConfig({
         'coverage/',
         '*.config.js',
         'eslint.config.js',
+        // Exclude CLI entry point scripts (tested via integration tests)
+        'scripts/generate-news-enhanced.js',
+        'scripts/generate-news-indexes.js',
+        'scripts/generate-sitemap.js',
       ],
     },
     

@@ -4,13 +4,15 @@ Comprehensive testing infrastructure for EU Parliament Monitor project.
 
 ## Overview
 
-This test suite provides unit and integration testing with high coverage standards for all core functionality:
+This test suite provides unit and integration testing with high coverage
+standards for all core functionality:
 
 - **Article HTML generation** with multi-language support
-- **MCP client** connection and data retrieval  
+- **MCP client** connection and data retrieval
 - **News index generation** for all languages
 - **Sitemap generation** with proper SEO
-- **Full integration** workflows including MCP, multi-language, and news generation
+- **Full integration** workflows including MCP, multi-language, and news
+  generation
 
 ## Test Structure
 
@@ -61,6 +63,7 @@ npm run test:integration
 ### CI/CD Integration
 
 Tests run automatically in GitHub Actions on:
+
 - Every push to `main`
 - Every pull request
 - Manual workflow dispatch
@@ -70,7 +73,9 @@ Tests run automatically in GitHub Actions on:
 ### Unit Tests
 
 #### article-template.test.js
+
 Tests for HTML article generation:
+
 - ✅ Valid HTML structure (DOCTYPE, meta tags, semantic HTML)
 - ✅ Multi-language support (14 languages)
 - ✅ RTL support (Arabic, Hebrew)
@@ -83,7 +88,9 @@ Tests for HTML article generation:
 **Coverage Goal**: 100% (critical security paths)
 
 #### ep-mcp-client.test.js
+
 Tests for European Parliament MCP client:
+
 - ✅ Connection management and retry logic
 - ✅ Message handling (JSON-RPC protocol)
 - ✅ Request/response flow
@@ -94,7 +101,9 @@ Tests for European Parliament MCP client:
 **Coverage Goal**: 95% (complex async paths)
 
 #### generate-news-indexes.test.js
+
 Tests for index page generation:
+
 - ✅ Article filename parsing (YYYY-MM-DD-slug-lang.html)
 - ✅ Article grouping by language
 - ✅ Date sorting (newest first)
@@ -106,7 +115,9 @@ Tests for index page generation:
 **Coverage Goal**: 90%
 
 #### generate-sitemap.test.js
+
 Tests for sitemap.xml generation:
+
 - ✅ Valid XML structure
 - ✅ URL formatting (HTTPS, proper encoding)
 - ✅ Priority and changefreq settings
@@ -120,7 +131,9 @@ Tests for sitemap.xml generation:
 ### Integration Tests
 
 #### news-generation.test.js
+
 Full article generation workflow:
+
 - ✅ End-to-end article creation
 - ✅ File system operations (save, update)
 - ✅ Multi-language article generation
@@ -133,7 +146,9 @@ Full article generation workflow:
 **Coverage Goal**: 85%
 
 #### mcp-integration.test.js
+
 MCP server integration and data flow:
+
 - ✅ MCP client connection (mock server)
 - ✅ Data retrieval (sessions, questions, documents, MEPs)
 - ✅ Article generation from MCP data
@@ -146,7 +161,9 @@ MCP server integration and data flow:
 **Coverage Goal**: 85%
 
 #### multi-language.test.js
+
 Multi-language functionality:
+
 - ✅ All 14 EU languages support
 - ✅ Language-specific labels (type, read time, navigation)
 - ✅ Date formatting per locale
@@ -162,13 +179,36 @@ Multi-language functionality:
 ## Test Coverage Requirements
 
 ### Global Thresholds
+
 - **Lines**: ≥80%
 - **Functions**: ≥80%
 - **Branches**: ≥75%
 - **Statements**: ≥80%
 
+### Coverage Scope
+
+Coverage is measured for library modules only. CLI entry point scripts are
+excluded from coverage thresholds as they:
+
+- Have no exports (pure executables)
+- Are tested via integration tests
+- Are validated by functional tests in GitHub Actions (`test-and-report.yml`)
+
+**Excluded from coverage**:
+
+- `scripts/generate-news-enhanced.js` - News generation CLI
+- `scripts/generate-news-indexes.js` - Index generation CLI
+- `scripts/generate-sitemap.js` - Sitemap generation CLI
+
+**Included in coverage** (library modules):
+
+- `scripts/article-template.js` - HTML generation functions
+- `scripts/ep-mcp-client.js` - MCP client library
+
 ### Critical Paths
+
 Security-critical paths require ≥95% coverage:
+
 - XSS prevention and input sanitization
 - HTML generation and escaping
 - MCP client error handling
@@ -179,6 +219,7 @@ Security-critical paths require ≥95% coverage:
 ### Mock EP Data (`test/fixtures/ep-data.js`)
 
 Realistic mock data for testing:
+
 - `mockPlenarySession` - Sample plenary session with agenda
 - `mockParliamentaryQuestions` - Written and oral questions
 - `mockDocuments` - Legislative proposals and reports
@@ -191,7 +232,9 @@ Realistic mock data for testing:
 ## Test Helpers
 
 ### test-utils.js
+
 Common utilities:
+
 - `createTempDir()` - Create temporary test directory
 - `cleanupTempDir()` - Clean up after tests
 - `validateHTML()` - Validate HTML structure
@@ -202,7 +245,9 @@ Common utilities:
 - `isValidDate()` - Date validation
 
 ### mock-mcp-server.js
+
 Mock MCP server for testing:
+
 - `MockMCPServer` class - Full mock implementation
 - `createMockMCPClient()` - Factory function
 - Simulates all MCP tool operations
@@ -228,11 +273,13 @@ describe('Feature Name', () => {
   describe('Specific Functionality', () => {
     it('should do something specific', () => {
       // Arrange: Set up test data
-      const input = { /* test data */ };
-      
+      const input = {
+        /* test data */
+      };
+
       // Act: Execute the code being tested
       const result = functionToTest(input);
-      
+
       // Assert: Verify expected outcomes
       expect(result).toBe(expected);
     });
@@ -364,6 +411,7 @@ cat coverage/lcov.info
 ### Coverage Badges
 
 Coverage results are exported to:
+
 - `coverage/coverage-summary.json` - JSON summary
 - `coverage/lcov.info` - LCOV format (for Codecov)
 - `coverage/index.html` - Interactive HTML report
@@ -383,12 +431,13 @@ test:
     - run: npm ci
     - run: npm test
     - run: npm run test:coverage
-    - uses: codecov/codecov-action@v4  # Upload coverage
+    - uses: codecov/codecov-action@v4 # Upload coverage
 ```
 
 ### Quality Gates
 
 All PRs must pass:
+
 - ✅ All tests passing
 - ✅ Coverage thresholds met (80%+ lines, 75%+ branches)
 - ✅ No ESLint errors
