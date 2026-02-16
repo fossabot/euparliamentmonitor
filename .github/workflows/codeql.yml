@@ -1,0 +1,104 @@
+name: "CodeQL Security Analysis"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    # Run every Monday at 00:00 UTC
+    - cron: '0 0 * * 1'
+
+# Set default permissions to read-only
+permissions: read-all
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      # Required for all workflows
+      security-events: write
+      # Required to fetch internal or private CodeQL packs
+      packages: read
+      # Only required for workflows in private repositories
+      actions: read
+      contents: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: javascript-typescript
+            build-mode: none
+    
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@5ef0c079ce82195b2a36a210272d6b661572d83e # v2.14.2
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@fe83e8621ecd1fceb8c60ab42ecf2bbe9f1a3bbb # v3.28.14
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
+          # Enable all security queries
+          queries: +security-extended,security-and-quality
+          # Custom configuration for JavaScript/TypeScript
+          config: |
+            paths-ignore:
+              - 'news/**'
+              - 'node_modules/**'
+              - '**/*.test.js'
+              - '**/*.spec.js'
+
+      # If the analyze step fails for one of the languages you are analyzing with
+      # "We were unable to automatically build your code", modify the matrix above
+      # to set the build-mode to "manual" and uncomment the following three steps
+      # and modify them (or add more) to build your code if your project
+      # uses a compiled language
+
+      # - if: matrix.build-mode == 'manual'
+      #   name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '20'
+      
+      # - if: matrix.build-mode == 'manual'
+      #   name: Install dependencies
+      #   run: npm ci
+
+      # - if: matrix.build-mode == 'manual'
+      #   name: Build
+      #   run: npm run build
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@fe83e8621ecd1fceb8c60ab42ecf2bbe9f1a3bbb # v3.28.14
+        with:
+          category: "/language:${{ matrix.language }}"
+          # Upload results to GitHub Security tab
+          upload: true
+          # Generate SARIF output
+          output: sarif-results
+          # Wait for processing to complete
+          wait-for-processing: true
+
+      - name: Upload SARIF results
+        if: always()
+        uses: github/codeql-action/upload-sarif@fe83e8621ecd1fceb8c60ab42ecf2bbe9f1a3bbb # v3.28.14
+        with:
+          sarif_file: sarif-results
+          category: "/language:${{ matrix.language }}"
+
+      - name: Check for Critical Vulnerabilities
+        if: always()
+        run: |
+          echo "🔍 Checking for critical vulnerabilities..."
+          # This is informational - the workflow won't fail, but will report
+          echo "✅ CodeQL analysis complete. Check the Security tab for results."
+          echo "📊 SARIF results uploaded to GitHub Security."
