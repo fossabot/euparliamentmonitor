@@ -17,9 +17,14 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { generateArticleHTML } from './article-template.js';
+import { getEPMCPClient, closeEPMCPClient } from './ep-mcp-client.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Try to use MCP client if available
+let mcpClient = null;
+let useMCP = process.env.USE_EP_MCP !== 'false'; // Enable by default
 
 // Parse command line arguments
 const args = process.argv.slice(2);
@@ -135,6 +140,66 @@ async function writeSingleArticle(html, slug, lang) {
 }
 
 /**
+ * Initialize MCP client if available
+ */
+async function initializeMCPClient() {
+  if (!useMCP) {
+    console.log('ℹ️ MCP client disabled via USE_EP_MCP=false');
+    return null;
+  }
+
+  try {
+    console.log('🔌 Attempting to connect to European Parliament MCP Server...');
+    mcpClient = await getEPMCPClient();
+    console.log('✅ MCP client connected successfully');
+    return mcpClient;
+  } catch (error) {
+    console.warn('⚠️ Could not connect to MCP server:', error.message);
+    console.warn('⚠️ Falling back to placeholder content');
+    return null;
+  }
+}
+
+/**
+ * Fetch events from MCP server or use fallback
+ */
+async function fetchEvents(dateRange) {
+  if (mcpClient) {
+    try {
+      console.log('  📡 Fetching events from MCP server...');
+      const result = await mcpClient.getPlenarySessions({
+        startDate: dateRange.start,
+        endDate: dateRange.end,
+        limit: 50
+      });
+      
+      // Parse MCP response
+      if (result && result.content && result.content[0]) {
+        const data = JSON.parse(result.content[0].text);
+        if (data.sessions && data.sessions.length > 0) {
+          console.log(`  ✅ Fetched ${data.sessions.length} sessions from MCP`);
+          return data.sessions.map(s => ({
+            date: s.date || dateRange.start,
+            title: s.title || 'Parliamentary Session',
+            type: s.type || 'Session',
+            description: s.description || ''
+          }));
+        }
+      }
+    } catch (error) {
+      console.warn('  ⚠️ MCP fetch failed:', error.message);
+    }
+  }
+  
+  // Fallback to sample events
+  console.log('  ℹ️ Using placeholder events');
+  return [
+    { date: dateRange.start, title: 'Plenary Session', type: 'Plenary', description: 'Full parliamentary session' },
+    { date: dateRange.start, title: 'ENVI Committee Meeting', type: 'Committee', description: 'Environment committee discussion' }
+  ];
+}
+
+/**
  * Calculate read time estimate
  */
 function calculateReadTime(content) {
@@ -157,11 +222,8 @@ async function generateWeekAhead() {
     const today = new Date();
     const slug = `${formatDateForSlug(today)}-week-ahead`;
     
-    // Sample events for demonstration (in production, this would come from EU Parliament API/MCP)
-    const sampleEvents = [
-      { date: dateRange.start, title: 'Plenary Session', type: 'Plenary', description: 'Full parliamentary session' },
-      { date: dateRange.start, title: 'ENVI Committee Meeting', type: 'Committee', description: 'Environment committee discussion' }
-    ];
+    // Fetch events from MCP server or use fallback
+    const sampleEvents = await fetchEvents(dateRange);
     
     // Generate for each requested language
     for (const lang of languages) {
@@ -303,42 +365,54 @@ async function main() {
   console.log('🚀 Starting news generation...');
   console.log('');
   
-  const results = [];
-  
-  for (const articleType of articleTypes) {
-    if (!VALID_ARTICLE_TYPES.includes(articleType)) {
-      console.log(`⏭️ Skipping unknown article type: ${articleType}`);
-      continue;
+  try {
+    // Initialize MCP client
+    await initializeMCPClient();
+    
+    const results = [];
+    
+    for (const articleType of articleTypes) {
+      if (!VALID_ARTICLE_TYPES.includes(articleType)) {
+        console.log(`⏭️ Skipping unknown article type: ${articleType}`);
+        continue;
+      }
+      
+      switch (articleType) {
+        case 'week-ahead':
+          results.push(await generateWeekAhead());
+          break;
+        default:
+          console.log(`⏭️ Article type "${articleType}" not yet implemented`);
+      }
     }
     
-    switch (articleType) {
-      case 'week-ahead':
-        results.push(await generateWeekAhead());
-        break;
-      default:
-        console.log(`⏭️ Article type "${articleType}" not yet implemented`);
+    console.log('');
+    console.log('📊 Generation Summary:');
+    console.log(`  ✅ Generated: ${stats.generated} articles`);
+    console.log(`  ❌ Errors: ${stats.errors}`);
+    console.log('');
+    
+    // Write metadata
+    const metadata = {
+      timestamp: stats.timestamp,
+      generated: stats.generated,
+      errors: stats.errors,
+      articles: stats.articles,
+      results,
+      usedMCP: mcpClient !== null
+    };
+    
+    if (!dryRunArg) {
+      const metadataPath = path.join(METADATA_DIR, `generation-${formatDateForSlug()}.json`);
+      fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2), 'utf-8');
+      console.log(`📝 Metadata written to: ${metadataPath}`);
     }
-  }
-  
-  console.log('');
-  console.log('📊 Generation Summary:');
-  console.log(`  ✅ Generated: ${stats.generated} articles`);
-  console.log(`  ❌ Errors: ${stats.errors}`);
-  console.log('');
-  
-  // Write metadata
-  const metadata = {
-    timestamp: stats.timestamp,
-    generated: stats.generated,
-    errors: stats.errors,
-    articles: stats.articles,
-    results
-  };
-  
-  if (!dryRunArg) {
-    const metadataPath = path.join(METADATA_DIR, `generation-${formatDateForSlug()}.json`);
-    fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2), 'utf-8');
-    console.log(`📝 Metadata written to: ${metadataPath}`);
+  } finally {
+    // Clean up MCP client connection
+    if (mcpClient) {
+      console.log('🔌 Closing MCP client connection...');
+      await closeEPMCPClient();
+    }
   }
   
   process.exit(stats.errors > 0 ? 1 : 0);
