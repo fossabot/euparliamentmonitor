@@ -52,6 +52,33 @@ EU Parliament Monitor is an automated news generation platform that monitors Eur
 - 🤖 **GitHub Actions Integration**: Automated daily news generation
 - 📊 **SEO Optimized**: Proper metadata, structured data, and sitemap generation
 
+## Custom Agents
+
+EU Parliament Monitor includes **8 specialized GitHub Copilot custom agents** to streamline development:
+
+- 🤖 **[product-task-agent](.github/agents/product-task-agent.md)** - Product specialist for issue creation and coordination
+- 📰 **[news-journalist](.github/agents/news-journalist.md)** - The Economist-style European Parliament reporting
+- 🎨 **[frontend-specialist](.github/agents/frontend-specialist.md)** - HTML5/CSS3/WCAG 2.1 AA UI/UX expert
+- 🔄 **[data-pipeline-specialist](.github/agents/data-pipeline-specialist.md)** - European Parliament MCP integration expert
+- ⚙️ **[devops-engineer](.github/agents/devops-engineer.md)** - CI/CD and GitHub Actions automation
+- 🔒 **[security-architect](.github/agents/security-architect.md)** - ISMS, GDPR, NIS2 compliance expert
+- 📚 **[documentation-architect](.github/agents/documentation-architect.md)** - C4 models and architecture docs
+- ✅ **[quality-engineer](.github/agents/quality-engineer.md)** - Testing, validation, and accessibility
+
+**Usage Example**:
+```bash
+# Use product-task-agent to analyze repository and create improvement issues
+@product-task-agent analyze the multi-language support and create issues for any gaps
+
+# Use news-journalist to generate content
+@news-journalist create a week-ahead article for the upcoming plenary session
+
+# Use frontend-specialist for UI improvements
+@frontend-specialist make the language switcher fully keyboard accessible
+```
+
+**Learn More**: See [Custom Agents Documentation](.github/agents/README.md) for detailed agent capabilities, usage patterns, and examples.
+
 ## Languages Supported
 
 - **EU Core**: English (en), German (de), French (fr), Spanish (es), Italian (it), Dutch (nl)

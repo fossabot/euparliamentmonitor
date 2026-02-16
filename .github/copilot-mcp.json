@@ -1,0 +1,68 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github",
+        "--toolsets",
+        "all",
+        "--tools",
+        "*"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}",
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${{ secrets.COPILOT_MCP_GITHUB_PERSONAL_ACCESS_TOKEN }}",
+        "GITHUB_OWNER": "Hack23",
+        "GITHUB_API_URL": "https://api.githubcopilot.com/mcp/insiders"
+      }
+    },
+    "filesystem": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/runner/work/euparliamentmonitor/euparliamentmonitor"
+      ]
+    },
+    "git": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-git",
+        "--repository",
+        "/home/runner/work/euparliamentmonitor/euparliamentmonitor"
+      ]
+    },
+    "memory": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ]
+    },
+    "sequential-thinking": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "playwright": {
+      "type": "local",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp"
+      ],
+      "env": {
+        "DISPLAY": ":99"
+      }
+    }
+  }
+}
