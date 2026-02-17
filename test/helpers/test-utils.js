@@ -27,8 +27,31 @@ export function createTempDir() {
  * @param {string} dir - Directory path to clean up
  */
 export function cleanupTempDir(dir) {
-  if (fs.existsSync(dir)) {
-    fs.rmSync(dir, { recursive: true, force: true });
+  if (!fs.existsSync(dir)) {
+    return;
+  }
+
+  let attempts = 0;
+  const maxAttempts = 3;
+  const delayMs = 50;
+
+  while (attempts < maxAttempts) {
+    try {
+      fs.rmSync(dir, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
+      return; // Success
+    } catch (error) {
+      attempts++;
+      if (attempts >= maxAttempts) {
+        // Last attempt failed, log but don't throw to avoid breaking tests
+        console.warn(`Failed to cleanup ${dir} after ${maxAttempts} attempts: ${error.message}`);
+        return;
+      }
+      // Wait a bit before retry (synchronous sleep using busy-wait for short delays)
+      const start = Date.now();
+      while (Date.now() - start < delayMs) {
+        // Busy wait
+      }
+    }
   }
 }
 
