@@ -89,7 +89,9 @@ detailed coding guidelines.
 
 ### Testing Infrastructure
 
-Comprehensive test suite with **Vitest** covering all core functionality:
+Comprehensive test suite with **Vitest** and **Playwright** covering all functionality:
+
+#### Unit & Integration Tests (Vitest)
 
 - **Unit Tests**: Article generation, MCP client, index/sitemap generation
 - **Integration Tests**: Full workflows, MCP integration, multi-language support
@@ -97,7 +99,7 @@ Comprehensive test suite with **Vitest** covering all core functionality:
 - **Test Count**: 169+ tests covering critical paths
 
 ```bash
-# Run all tests
+# Run unit & integration tests
 npm test
 
 # Run with coverage
@@ -110,8 +112,33 @@ npm run test:watch
 npm run test:ui
 ```
 
-**Testing Documentation**: See [test/README.md](test/README.md) for detailed
-test suite documentation, best practices, and contribution guidelines.
+#### End-to-End Tests (Playwright)
+
+- **E2E Tests**: Complete user experience validation
+- **Cross-Browser**: Chromium, Firefox, WebKit
+- **Mobile Support**: Mobile Chrome, Mobile Safari
+- **Accessibility**: WCAG 2.1 AA compliance with axe-core
+- **Responsive Design**: Multiple viewport sizes
+- **Test Count**: 60+ E2E tests covering user journeys
+
+```bash
+# Run E2E tests
+npm run test:e2e
+
+# Run with UI (interactive)
+npm run test:e2e:ui
+
+# Run in headed mode (see browser)
+npm run test:e2e:headed
+
+# View test report
+npm run test:e2e:report
+```
+
+**Testing Documentation**:
+
+- [test/README.md](test/README.md) - Unit & integration tests
+- [e2e/README.md](e2e/README.md) - E2E testing guide
 
 ## Custom Agents
 
