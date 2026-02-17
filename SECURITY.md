@@ -299,9 +299,10 @@ Before releases, we conduct:
 
 **ajv ReDoS Vulnerability (GHSA-2g4f-4pwh-qvx6)**
 
-- **Status**: False Positive (Not Exploitable)
-- **Affected Package**: ajv < 8.18.0 (transitive dependency via
-  @eslint/eslintrc)
+- **Status**: False Positive (Not Exploitable) - Upgrade Blocked by Plugin
+  Compatibility
+- **Affected Package**: ajv < 8.18.0 (transitive dependency via @eslint/eslintrc
+  in ESLint 9.x)
 - **Severity**: Moderate (CVSS: N/A)
 - **Description**: ReDoS vulnerability when using `$data` option in ajv schema
   validation
@@ -310,12 +311,22 @@ Before releases, we conduct:
     configurations
   - The vulnerability cannot be exploited in our usage context
   - Review of dependency code confirms no use of vulnerable feature
-- **Resolution Path**: Will be automatically resolved when upgrading to ESLint
-  10.x (Q2 2026)
-  - ESLint 10 migrates to ajv 8.18.0+ which fixes the vulnerability
-  - Current ESLint 9.x cannot upgrade without breaking changes to plugins
-- **Monitoring**: Tracked in dependency updates, re-evaluated with each ESLint
-  release
+- **Resolution Path**:
+  - **ESLint 10 Status**: Released (10.0.0) on 2026-02-17 but still uses ajv 6.x
+    internally
+  - **Blocker**: ESLint plugins not yet updated for ESLint 10 API changes:
+    - `eslint-plugin-security@3.0.1`: Uses deprecated `context.getSourceCode()`
+      API
+    - `eslint-plugin-sonarjs@3.0.7`: Peer dependency limited to
+      `^8.0.0 || ^9.0.0`
+    - `eslint-plugin-jsdoc@62.5.5`: Peer dependency limited to
+      `^7.0.0 || ^8.0.0 || ^9.0.0`
+  - **Action Required**: Monitor plugin updates for ESLint 10 compatibility
+  - **Timeline**: Expected Q2-Q3 2026 as plugin ecosystem catches up
+- **Monitoring**:
+  - Track plugin releases monthly
+  - Test ESLint 10 compatibility when plugins release updates
+  - Re-evaluated 2026-02-17
 - **Risk Level**: Accepted (No exploitable attack vector in current
   implementation)
 - **Last Reviewed**: 2026-02-17
