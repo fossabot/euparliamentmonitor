@@ -2,32 +2,41 @@
 
 ## 🛡️ Security Overview
 
-EU Parliament Monitor takes security seriously. This document outlines our security practices, vulnerability disclosure process, and how to report security issues.
+EU Parliament Monitor takes security seriously. This document outlines our
+security practices, vulnerability disclosure process, and how to report security
+issues.
 
-**Security Architecture**: For comprehensive security implementation details, see [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md).
+**Security Architecture**: For comprehensive security implementation details,
+see [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md).
 
-**ISMS Compliance**: This project follows [Hack23 ISMS Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) and [Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md).
+**ISMS Compliance**: This project follows
+[Hack23 ISMS Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+and
+[Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md).
 
 ## Supported Versions
 
 We provide security updates for the following versions:
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.x.x   | ✅ Yes             |
-| < 1.0   | ❌ No              |
+| Version | Supported |
+| ------- | --------- |
+| 1.x.x   | ✅ Yes    |
+| < 1.0   | ❌ No     |
 
-**Note**: We strongly recommend always using the latest stable release to benefit from the most recent security updates.
+**Note**: We strongly recommend always using the latest stable release to
+benefit from the most recent security updates.
 
 ## Reporting Security Issues
 
 ### ⚠️ Please DO NOT Report Security Vulnerabilities Through Public GitHub Issues
 
-If you discover a security vulnerability, please report it responsibly through one of the following channels:
+If you discover a security vulnerability, please report it responsibly through
+one of the following channels:
 
 ### 🔒 Preferred Method: GitHub Security Advisories
 
-1. Navigate to the [euparliamentmonitor repository](https://github.com/Hack23/euparliamentmonitor)
+1. Navigate to the
+   [euparliamentmonitor repository](https://github.com/Hack23/euparliamentmonitor)
 2. Click on the **Security** tab
 3. In the left sidebar, under "Reporting", click **Advisories**
 4. Click **Report a vulnerability** to open the advisory form
@@ -35,6 +44,7 @@ If you discover a security vulnerability, please report it responsibly through o
 6. Click **Submit report**
 
 **Benefits of using GitHub Security Advisories**:
+
 - Secure, private disclosure channel
 - Automatic CVE assignment (if applicable)
 - Coordinated disclosure timeline
@@ -42,10 +52,13 @@ If you discover a security vulnerability, please report it responsibly through o
 
 ### 📧 Alternative Method: Email
 
-Send vulnerability reports to: **[security@hack23.com](mailto:security@hack23.com)**
+Send vulnerability reports to:
+**[security@hack23.com](mailto:security@hack23.com)**
 
 **For sensitive information, use PGP encryption**:
-- PGP Key: Available at [https://hack23.com/pgp-key.asc](https://hack23.com/pgp-key.asc)
+
+- PGP Key: Available at
+  [https://hack23.com/pgp-key.asc](https://hack23.com/pgp-key.asc)
 - Key Fingerprint: (to be added)
 
 ## What to Include in Your Report
@@ -64,7 +77,8 @@ To help us understand and address the issue quickly, please include:
 ### Optional But Helpful
 
 - **Suggested Fix**: If you have ideas on how to fix the issue
-- **Related Issues**: Links to similar vulnerabilities or related security concerns
+- **Related Issues**: Links to similar vulnerabilities or related security
+  concerns
 - **CVE References**: If the issue is related to known CVEs
 - **CVSS Score**: If you've calculated a severity score
 
@@ -95,24 +109,25 @@ To help us understand and address the issue quickly, please include:
 
 We are committed to responding to security vulnerabilities promptly:
 
-| Phase | Timeline |
-|-------|----------|
-| **Initial Response** | Within 48 hours of report submission |
-| **Validation & Triage** | Within 7 days |
-| **Fix Development** | Based on severity (see below) |
-| **Security Advisory** | Published after fix is deployed |
-| **CVE Assignment** | If applicable, coordinated with disclosure |
+| Phase                   | Timeline                                   |
+| ----------------------- | ------------------------------------------ |
+| **Initial Response**    | Within 48 hours of report submission       |
+| **Validation & Triage** | Within 7 days                              |
+| **Fix Development**     | Based on severity (see below)              |
+| **Security Advisory**   | Published after fix is deployed            |
+| **CVE Assignment**      | If applicable, coordinated with disclosure |
 
 ### Fix Timeline by Severity
 
-| Severity | Description | Fix Timeline |
-|----------|-------------|--------------|
-| **Critical** | Remote code execution, authentication bypass | 7 days |
-| **High** | XSS, injection, significant data exposure | 14 days |
-| **Medium** | CSRF, information disclosure, DoS | 30 days |
-| **Low** | Minor security improvements | 90 days |
+| Severity     | Description                                  | Fix Timeline |
+| ------------ | -------------------------------------------- | ------------ |
+| **Critical** | Remote code execution, authentication bypass | 7 days       |
+| **High**     | XSS, injection, significant data exposure    | 14 days      |
+| **Medium**   | CSRF, information disclosure, DoS            | 30 days      |
+| **Low**      | Minor security improvements                  | 90 days      |
 
-**Note**: Complex fixes may require additional time. We will keep you informed throughout the process.
+**Note**: Complex fixes may require additional time. We will keep you informed
+throughout the process.
 
 ## Security Update Process
 
@@ -120,10 +135,12 @@ Once a vulnerability is confirmed, we follow this process:
 
 1. **Acknowledgment**: We acknowledge receipt of your report within 48 hours
 2. **Validation**: Our security team validates the vulnerability within 7 days
-3. **Fix Development**: We develop and test a fix according to severity timelines
+3. **Fix Development**: We develop and test a fix according to severity
+   timelines
 4. **Security Advisory**: We prepare a GitHub Security Advisory (private draft)
 5. **Fix Deployment**: We release the fix in a new version
-6. **Public Disclosure**: We publish the security advisory and credit the reporter
+6. **Public Disclosure**: We publish the security advisory and credit the
+   reporter
 7. **Notification**: We notify users through GitHub releases and security tab
 
 ### Example Security Advisory
@@ -165,15 +182,20 @@ npm install
 ### Monitor Security Advisories
 
 - Watch the repository for security announcements
-- Subscribe to [GitHub Security Advisories](https://github.com/Hack23/euparliamentmonitor/security/advisories)
-- Check the [Security tab](https://github.com/Hack23/euparliamentmonitor/security) regularly
+- Subscribe to
+  [GitHub Security Advisories](https://github.com/Hack23/euparliamentmonitor/security/advisories)
+- Check the
+  [Security tab](https://github.com/Hack23/euparliamentmonitor/security)
+  regularly
 
 ### Follow Secure Development Practices
 
 When contributing to the project:
 
-- Read [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for security controls
-- Follow [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
+- Read [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) for security
+  controls
+- Follow
+  [Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md)
 - Review security section in [CONTRIBUTING.md](CONTRIBUTING.md)
 - Run security tests before submitting PRs:
   ```bash
@@ -217,7 +239,8 @@ EU Parliament Monitor implements multiple layers of security:
 - ✅ **Secrets Management**: Secure handling of credentials
 - ✅ **Audit Logging**: Complete audit trail via Git history
 
-For detailed information, see [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md).
+For detailed information, see
+[SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md).
 
 ## Security Testing
 
@@ -253,42 +276,76 @@ Before releases, we conduct:
 
 ### Current Security Posture
 
-**Classification** (per [ISMS Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)):
+**Classification** (per
+[ISMS Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md)):
+
 - **Confidentiality**: Public (Level 1) - European Parliament open data
 - **Integrity**: Medium (Level 2) - News accuracy critical
 - **Availability**: Medium (Level 2) - Daily updates expected
 
 **Risk Assessment**:
-- **P1 (Medium Risk)**: Data integrity issues if MCP server compromised or returns malicious data
+
+- **P1 (Medium Risk)**: Data integrity issues if MCP server compromised or
+  returns malicious data
   - **Mitigation**: Multi-layer input validation and sanitization
   - **Status**: Additional automated content verification planned (Q3 2026)
 - **P2 (Low Risk)**: Supply chain attacks via dependencies
   - **Mitigation**: Zero production dependencies, SHA-pinned actions, Dependabot
   - **Status**: Continuously monitored
-- **P3-P5 (Low Risk)**: Other threats have robust controls (see [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md))
+- **P3-P5 (Low Risk)**: Other threats have robust controls (see
+  [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md))
+
+### Known False Positives
+
+**ajv ReDoS Vulnerability (GHSA-2g4f-4pwh-qvx6)**
+
+- **Status**: False Positive (Not Exploitable)
+- **Affected Package**: ajv < 8.18.0 (transitive dependency via
+  @eslint/eslintrc)
+- **Severity**: Moderate (CVSS: N/A)
+- **Description**: ReDoS vulnerability when using `$data` option in ajv schema
+  validation
+- **Analysis**:
+  - ESLint and @eslint/eslintrc do not use the `$data` option in their ajv
+    configurations
+  - The vulnerability cannot be exploited in our usage context
+  - Review of dependency code confirms no use of vulnerable feature
+- **Resolution Path**: Will be automatically resolved when upgrading to ESLint
+  10.x (Q2 2026)
+  - ESLint 10 migrates to ajv 8.18.0+ which fixes the vulnerability
+  - Current ESLint 9.x cannot upgrade without breaking changes to plugins
+- **Monitoring**: Tracked in dependency updates, re-evaluated with each ESLint
+  release
+- **Risk Level**: Accepted (No exploitable attack vector in current
+  implementation)
+- **Last Reviewed**: 2026-02-17
 
 ### Limitations
 
 As a static site generator:
+
 - No runtime authentication/authorization mechanisms
 - Content integrity depends on MCP server trustworthiness
 - Limited real-time threat detection (relies on GitHub security features)
 
 ## Hall of Fame
 
-We recognize security researchers who have responsibly disclosed vulnerabilities:
+We recognize security researchers who have responsibly disclosed
+vulnerabilities:
 
 <!-- This section will be populated as security reports are received and fixed -->
 
-*No security vulnerabilities have been reported to date.*
+_No security vulnerabilities have been reported to date._
 
 To be added to the Hall of Fame:
+
 1. Report a valid security vulnerability
 2. Follow responsible disclosure practices
 3. Allow us to fix the issue before public disclosure
 4. Optionally provide your name/handle and link
 
 Recognition includes:
+
 - Public acknowledgment in this file
 - Credit in security advisory
 - Link to your GitHub profile or website (optional)
@@ -298,14 +355,16 @@ Recognition includes:
 
 EU Parliament Monitor security practices align with:
 
-- ✅ **ISO 27001**: Information Security Management (A.16.1 - Vulnerability Management)
+- ✅ **ISO 27001**: Information Security Management (A.16.1 - Vulnerability
+  Management)
 - ✅ **GDPR**: Data protection by design and default
 - ✅ **NIS2**: Network and information security requirements
 - ✅ **EU Cyber Resilience Act**: Coordinated vulnerability disclosure
 - ✅ **NIST CSF 2.0**: Identify, Protect, Detect, Respond, Recover
 - ✅ **CIS Controls v8.1**: Continuous vulnerability management
 
-For detailed compliance mapping, see [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md).
+For detailed compliance mapping, see
+[SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md).
 
 ## Security Metrics
 
@@ -321,10 +380,13 @@ Current security posture:
 
 ### Documentation
 
-- [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Complete security architecture
-- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Security roadmap
+- [SECURITY_ARCHITECTURE.md](SECURITY_ARCHITECTURE.md) - Complete security
+  architecture
+- [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) - Security
+  roadmap
 - [CONTRIBUTING.md](CONTRIBUTING.md) - Security section for contributors
-- [Hack23 ISMS](https://github.com/Hack23/ISMS-PUBLIC) - Organization security policies
+- [Hack23 ISMS](https://github.com/Hack23/ISMS-PUBLIC) - Organization security
+  policies
 
 ### Security Tools
 
@@ -336,14 +398,18 @@ Current security posture:
 ### Contact
 
 - **Security Issues**: [security@hack23.com](mailto:security@hack23.com)
-- **General Questions**: [GitHub Discussions](https://github.com/Hack23/euparliamentmonitor/discussions)
-- **Bug Reports**: [GitHub Issues](https://github.com/Hack23/euparliamentmonitor/issues) (non-security)
+- **General Questions**:
+  [GitHub Discussions](https://github.com/Hack23/euparliamentmonitor/discussions)
+- **Bug Reports**:
+  [GitHub Issues](https://github.com/Hack23/euparliamentmonitor/issues)
+  (non-security)
 
 ## Updates to This Policy
 
 This security policy is reviewed and updated regularly. Last updated: 2026-02-17
 
 Changes to this policy will be communicated through:
+
 - Git commit history
 - GitHub release notes
 - Security tab updates
@@ -352,4 +418,5 @@ Changes to this policy will be communicated through:
 
 **Thank you for helping keep EU Parliament Monitor and its users safe!** 🛡️
 
-*For questions about this security policy, contact [security@hack23.com](mailto:security@hack23.com)*
+_For questions about this security policy, contact
+[security@hack23.com](mailto:security@hack23.com)_
