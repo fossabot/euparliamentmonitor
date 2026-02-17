@@ -87,6 +87,10 @@ All contributions must meet these quality standards:
 
 ### Testing Requirements
 
+All contributions must include appropriate tests:
+
+#### Unit & Integration Tests (Vitest)
+
 - **Unit Tests**: Write unit tests for new functions and modules
 - **Integration Tests**: Add integration tests for new workflows
 - **Coverage**: Maintain ≥80% line coverage, ≥75% branch coverage
@@ -94,7 +98,7 @@ All contributions must meet these quality standards:
 - **No Flaky Tests**: Ensure tests are deterministic and reliable
 
 ```bash
-# Run tests before committing
+# Run unit & integration tests
 npm test
 
 # Check coverage
@@ -104,10 +108,37 @@ npm run test:coverage
 npx vitest test/unit/your-test.test.js
 ```
 
+#### End-to-End Tests (Playwright)
+
+- **E2E Tests**: Add E2E tests for user-facing features
+- **Accessibility**: Ensure WCAG 2.1 AA compliance
+- **Responsive Design**: Test on mobile and desktop viewports
+- **Cross-Browser**: Tests run on Chromium, Firefox, and WebKit
+
+```bash
+# Run E2E tests
+npm run test:e2e
+
+# Run with UI (interactive debugging)
+npm run test:e2e:ui
+
+# Run in headed mode (see browser)
+npm run test:e2e:headed
+```
+
+**When to add E2E tests:**
+
+- New user-facing features (navigation, forms, etc.)
+- Changes to page structure or layout
+- Multi-language functionality changes
+- Accessibility improvements
+- Responsive design changes
+
 **Required for all code changes:**
 
 - New functions must have unit tests
 - New features must have integration tests
+- User-facing features should have E2E tests
 - All tests must pass before PR submission
 - Coverage thresholds must be met
 
@@ -208,6 +239,7 @@ git commit -m "test: increase coverage for MCP client"
    npm run format:check
    npm run htmlhint
    npm test
+   npm run test:e2e
    ```
 
 2. **Check test coverage**:
@@ -227,13 +259,16 @@ git commit -m "test: increase coverage for MCP client"
    # Verify output
    npm run generate-news-indexes
    npm run generate-sitemap
+
+   # Test E2E (if UI changes)
+   npm run test:e2e:headed
    ```
 
 4. **Update documentation** if you've:
    - Added new features
    - Changed APIs or interfaces
    - Modified configuration
-   - Added new test files (update test/README.md)
+   - Added new test files (update test/README.md or e2e/README.md)
 
 ### PR Checklist
 
@@ -241,11 +276,11 @@ git commit -m "test: increase coverage for MCP client"
 - [ ] All ESLint checks pass (0 errors)
 - [ ] Code is formatted with Prettier
 - [ ] All functions have JSDoc documentation
-- [ ] **All tests pass (npm test)**
+- [ ] **All unit & integration tests pass (npm test)**
+- [ ] **E2E tests pass (npm run test:e2e)** (if UI changes)
 - [ ] **Test coverage meets thresholds (≥80% lines, ≥75% branches)**
 - [ ] **New code has corresponding tests**
 - [ ] No security vulnerabilities introduced
-- [ ] Tests pass (if applicable)
 - [ ] Documentation updated (if needed)
 - [ ] Commit messages follow conventional commits format
 
@@ -269,6 +304,7 @@ Your PR must pass these automated checks:
 - ✅ JavaScript syntax check
 - ✅ **Unit tests**
 - ✅ **Integration tests**
+- ✅ **E2E tests** (runs daily and on PRs)
 - ✅ **Coverage thresholds (80%/75%)**
 - ✅ Security audit (npm audit)
 - ✅ Functional tests
@@ -293,12 +329,21 @@ euparliamentmonitor/
 │   ├── generate-sitemap.js            # Sitemap generation
 │   ├── article-template.js            # HTML templates
 │   └── ep-mcp-client.js              # MCP client
+├── test/                # Unit & integration tests
+│   ├── unit/            # Unit tests
+│   ├── integration/     # Integration tests
+│   ├── fixtures/        # Test data
+│   └── helpers/         # Test utilities
+├── e2e/                 # End-to-end tests
+│   ├── tests/           # E2E test files
+│   └── README.md        # E2E testing guide
 ├── news/                # Generated news articles
 ├── docs/                # Documentation
 │   └── CODE_STANDARDS.md # Code quality standards
 ├── .husky/              # Pre-commit hooks
 ├── eslint.config.js     # ESLint configuration
 ├── .prettierrc.json     # Prettier configuration
+├── playwright.config.js # Playwright E2E configuration
 └── package.json         # Dependencies and scripts
 ```
 
