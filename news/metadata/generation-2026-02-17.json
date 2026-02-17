@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-02-17T00:35:13.226Z",
+  "generated": 4,
+  "errors": 0,
+  "articles": [
+    "2026-02-17-week-ahead-en.html",
+    "2026-02-17-week-ahead-de.html",
+    "2026-02-17-week-ahead-fr.html",
+    "2026-02-17-week-ahead-es.html"
+  ],
+  "results": [
+    {
+      "success": true,
+      "files": 4,
+      "slug": "2026-02-17-week-ahead"
+    }
+  ],
+  "usedMCP": false
+}

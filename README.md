@@ -89,7 +89,8 @@ detailed coding guidelines.
 
 ### Testing Infrastructure
 
-Comprehensive test suite with **Vitest** and **Playwright** covering all functionality:
+Comprehensive test suite with **Vitest** and **Playwright** covering all
+functionality:
 
 #### Unit & Integration Tests (Vitest)
 
