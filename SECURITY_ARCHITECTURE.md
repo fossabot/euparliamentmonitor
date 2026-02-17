@@ -51,7 +51,7 @@ Per [Hack23 ISMS Classification Framework](https://github.com/Hack23/ISMS-PUBLIC
 **Defense Strategy**: Defense-in-depth with minimal attack surface
 - ✅ **Static Content**: No server-side execution, no databases
 - ✅ **GitHub-Hosted**: GitHub Pages infrastructure security
-- ✅ **Minimal Dependencies**: 14 production dependencies, automated updates
+- ✅ **Minimal Dependencies**: 17 devDependencies, zero production dependencies, automated updates
 - ✅ **Automated Security**: CodeQL, Dependabot, npm audit
 - ✅ **Supply Chain Security**: SHA-pinned GitHub Actions, SBOM generation
 - ✅ **Ephemeral Execution**: GitHub-hosted runners, no persistent infrastructure
@@ -73,7 +73,7 @@ Per [Hack23 ISMS Classification Framework](https://github.com/Hack23/ISMS-PUBLIC
 | 🚀 Future Security Architecture | Roadmap | [FUTURE_SECURITY_ARCHITECTURE.md](FUTURE_SECURITY_ARCHITECTURE.md) |
 | 📊 Data Model | Data Structures | [DATA_MODEL.md](DATA_MODEL.md) |
 | 📈 Security Flow | Process Flows | [FLOWCHART.md](FLOWCHART.md) |
-| 🎯 Threat Model | Risk Analysis | Future document |
+| 🎯 Threat Model | Risk Analysis | [#-threat-model](#-threat-model) |
 | 🛡️ ISMS Secure Development | Policy Framework | [ISMS-PUBLIC](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) |
 
 ---
@@ -750,14 +750,14 @@ graph TB
 ```
 
 **Dependency Security:**
-- **Minimal Dependencies**: Only 14 production dependencies (no runtime dependencies)
+- **Minimal Dependencies**: 17 devDependencies, zero production dependencies
 - **Dependabot**: Weekly scans, auto-generate PRs for updates
 - **npm audit**: CI validation, fail on moderate+ vulnerabilities
 - **Version Locking**: package-lock.json ensures reproducible builds
 - **SHA Pinning**: GitHub Actions pinned to commit SHA
 
 **Current Dependencies:**
-- All devDependencies (no production runtime dependencies)
+- All devDependencies (17 packages, no production runtime dependencies)
 - Latest versions with security patches
 - No known vulnerabilities (npm audit clean)
 

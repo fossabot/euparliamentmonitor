@@ -357,7 +357,7 @@ flowchart TD
     
     ImmediateResponse --> Contain[🔒 Containment<br/>Remove Malicious Content<br/>Isolate Compromised Code<br/>Revoke Tokens]
     UrgentResponse --> Contain
-    MediumResponse --> Contain
+    StandardResponse --> Contain
     RoutineResponse --> Contain
     
     Contain --> Investigate[🔍 Investigation<br/>Review Git Logs<br/>Check Actions Logs<br/>Analyze CodeQL Findings]
