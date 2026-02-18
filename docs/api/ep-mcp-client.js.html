@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>ep-mcp-client.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-MCP%2520Client%2520for%2520European%2520Parliament.EuropeanParliamentMCPClient.html">EuropeanParliamentMCPClient</a><ul class='methods'><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#_attemptConnection">_attemptConnection</a></li><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#callTool">callTool</a></li><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#connect">connect</a></li><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#disconnect">disconnect</a></li><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#getMEPs">getMEPs</a></li><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#getParliamentaryQuestions">getParliamentaryQuestions</a></li><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#getPlenarySessions">getPlenarySessions</a></li><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#handleMessage">handleMessage</a></li><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#listTools">listTools</a></li><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#searchDocuments">searchDocuments</a></li><li data-type='method'><a href="module-MCP%252520Client%252520for%252520European%252520Parliament.EuropeanParliamentMCPClient.html#sendRequest">sendRequest</a></li></ul></li></ul><h3>Modules</h3><ul><li><a href="module-Article%2520Template%2520Generator.html">Article Template Generator</a><ul class='methods'><li data-type='method'><a href="module-Article%252520Template%252520Generator.html#.generateArticleHTML">generateArticleHTML</a></li></ul></li><li><a href="module-Intelligence%2520Operations_Automated%2520News%2520Generation.html">Intelligence Operations/Automated News Generation</a><ul class='methods'><li data-type='method'><a href="module-Intelligence%252520Operations_Automated%252520News%252520Generation.html#~calculateReadTime">calculateReadTime</a></li><li data-type='method'><a href="module-Intelligence%252520Operations_Automated%252520News%252520Generation.html#~fetchEvents">fetchEvents</a></li><li data-type='method'><a href="module-Intelligence%252520Operations_Automated%252520News%252520Generation.html#~formatDateForSlug">formatDateForSlug</a></li><li data-type='method'><a href="module-Intelligence%252520Operations_Automated%252520News%252520Generation.html#~generateWeekAhead">generateWeekAhead</a></li><li data-type='method'><a href="module-Intelligence%252520Operations_Automated%252520News%252520Generation.html#~getWeekAheadDateRange">getWeekAheadDateRange</a></li><li data-type='method'><a href="module-Intelligence%252520Operations_Automated%252520News%252520Generation.html#~initializeMCPClient">initializeMCPClient</a></li><li data-type='method'><a href="module-Intelligence%252520Operations_Automated%252520News%252520Generation.html#~main">main</a></li><li data-type='method'><a href="module-Intelligence%252520Operations_Automated%252520News%252520Generation.html#~writeArticle">writeArticle</a></li><li data-type='method'><a href="module-Intelligence%252520Operations_Automated%252520News%252520Generation.html#~writeSingleArticle">writeSingleArticle</a></li></ul></li><li><a href="module-MCP%2520Client%2520for%2520European%2520Parliament.html">MCP Client for European Parliament</a></li><li><a href="module-News%2520Index%2520Generator.html">News Index Generator</a><ul class='methods'><li data-type='method'><a href="module-News%252520Index%252520Generator.html#~formatSlug">formatSlug</a></li><li data-type='method'><a href="module-News%252520Index%252520Generator.html#~generateIndexHTML">generateIndexHTML</a></li><li data-type='method'><a href="module-News%252520Index%252520Generator.html#~getNewsArticles">getNewsArticles</a></li><li data-type='method'><a href="module-News%252520Index%252520Generator.html#~groupArticlesByLanguage">groupArticlesByLanguage</a></li><li data-type='method'><a href="module-News%252520Index%252520Generator.html#~main">main</a></li><li data-type='method'><a href="module-News%252520Index%252520Generator.html#~parseArticleFilename">parseArticleFilename</a></li></ul></li><li><a href="module-Sitemap%2520Generator.html">Sitemap Generator</a><ul class='methods'><li data-type='method'><a href="module-Sitemap%252520Generator.html#~generateSitemap">generateSitemap</a></li><li data-type='method'><a href="module-Sitemap%252520Generator.html#~getModifiedDate">getModifiedDate</a></li><li data-type='method'><a href="module-Sitemap%252520Generator.html#~getNewsArticles">getNewsArticles</a></li><li data-type='method'><a href="module-Sitemap%252520Generator.html#~main">main</a></li></ul></li><li><a href="module-scripts_copy-test-reports.html">scripts/copy-test-reports</a><ul class='methods'><li data-type='method'><a href="module-scripts_copy-test-reports.html#~copyDirectory">copyDirectory</a></li><li data-type='method'><a href="module-scripts_copy-test-reports.html#~createTestResultsIndex">createTestResultsIndex</a></li><li data-type='method'><a href="module-scripts_copy-test-reports.html#~main">main</a></li></ul></li><li><a href="module-scripts_generate-docs-index.html">scripts/generate-docs-index</a><ul class='methods'><li data-type='method'><a href="module-scripts_generate-docs-index.html#~generateIndexHTML">generateIndexHTML</a></li><li data-type='method'><a href="module-scripts_generate-docs-index.html#~main">main</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">ep-mcp-client.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module MCP Client for European Parliament
+ * @description Client for connecting to European-Parliament-MCP-Server
+ *
+ * This module provides a client interface for communicating with the
+ * European Parliament MCP Server to retrieve parliamentary data.
+ *
+ * Enhanced with retry logic, better error handling, and connection pooling.
+ *
+ * @author Hack23 AB
+ * @license Apache-2.0
+ */
+
+import { spawn } from 'child_process';
+
+/**
+ * MCP Client for European Parliament data access
+ */
+export class EuropeanParliamentMCPClient {
+  constructor(options = {}) {
+    this.serverPath =
+      options.serverPath || process.env.EP_MCP_SERVER_PATH || 'european-parliament-mcp';
+    this.connected = false;
+    this.process = null;
+    this.requestId = 0;
+    this.pendingRequests = new Map();
+    this.connectionAttempts = 0;
+    this.maxConnectionAttempts = options.maxConnectionAttempts || 3;
+    this.connectionRetryDelay = options.connectionRetryDelay || 1000; // ms
+  }
+
+  /**
+   * Connect to the MCP server with retry logic
+   */
+  async connect() {
+    if (this.connected) {
+      return;
+    }
+
+    console.log('🔌 Connecting to European Parliament MCP Server...');
+
+    while (this.connectionAttempts &lt; this.maxConnectionAttempts) {
+      try {
+        await this._attemptConnection();
+        this.connectionAttempts = 0; // Reset on success
+        return;
+      } catch (error) {
+        this.connectionAttempts++;
+        if (this.connectionAttempts &lt; this.maxConnectionAttempts) {
+          const delay = this.connectionRetryDelay * Math.pow(2, this.connectionAttempts - 1);
+          console.warn(
+            `⚠️ Connection attempt ${this.connectionAttempts} failed. Retrying in ${delay}ms...`
+          );
+          await new Promise((resolve) => setTimeout(resolve, delay));
+        } else {
+          console.error(
+            '❌ Failed to connect to MCP server after',
+            this.maxConnectionAttempts,
+            'attempts'
+          );
+          throw error;
+        }
+      }
+    }
+  }
+
+  /**
+   * Attempt a single connection
+   */
+  async _attemptConnection() {
+    try {
+      // Spawn the MCP server process
+      this.process = spawn('node', [this.serverPath], {
+        stdio: ['pipe', 'pipe', 'pipe'],
+      });
+
+      // Buffer for incomplete messages
+      let buffer = '';
+
+      // Handle stdout (MCP protocol messages)
+      this.process.stdout.on('data', (data) => {
+        buffer += data.toString();
+        const lines = buffer.split('\n');
+        buffer = lines.pop() || ''; // Keep incomplete line in buffer
+
+        for (const line of lines) {
+          if (line.trim()) {
+            this.handleMessage(line);
+          }
+        }
+      });
+
+      // Handle stderr (logging)
+      this.process.stderr.on('data', (data) => {
+        const message = data.toString().trim();
+        if (message) {
+          console.error(`MCP Server: ${message}`);
+        }
+      });
+
+      // Handle process exit
+      this.process.on('close', (code) => {
+        console.log(`MCP Server exited with code ${code}`);
+        this.connected = false;
+
+        // Reject all pending requests
+        for (const [id, { reject }] of this.pendingRequests.entries()) {
+          reject(new Error('MCP server connection closed'));
+          this.pendingRequests.delete(id);
+        }
+      });
+
+      // Handle process errors
+      this.process.on('error', (error) => {
+        console.error('MCP Server process error:', error);
+        this.connected = false;
+      });
+
+      // Wait a moment for the server to start
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
+      this.connected = true;
+      console.log('✅ Connected to European Parliament MCP Server');
+    } catch (error) {
+      console.error('❌ Failed to spawn MCP server:', error.message);
+      throw error;
+    }
+  }
+
+  /**
+   * Disconnect from the MCP server
+   */
+  disconnect() {
+    if (this.process) {
+      this.process.kill();
+      this.process = null;
+    }
+    this.connected = false;
+  }
+
+  /**
+   * Handle incoming messages from MCP server
+   * @param {string} line - JSON message line from server
+   */
+  handleMessage(line) {
+    try {
+      const message = JSON.parse(line);
+
+      // Handle responses to our requests
+      if (message.id &amp;&amp; this.pendingRequests.has(message.id)) {
+        const { resolve, reject } = this.pendingRequests.get(message.id);
+        this.pendingRequests.delete(message.id);
+
+        if (message.error) {
+          reject(new Error(message.error.message || 'MCP server error'));
+        } else {
+          resolve(message.result);
+        }
+      }
+
+      // Handle notifications (messages without id)
+      else if (!message.id &amp;&amp; message.method) {
+        console.log(`MCP Notification: ${message.method}`);
+      }
+    } catch (error) {
+      console.error('Error parsing MCP message:', error.message);
+      console.error('Problematic line:', line);
+    }
+  }
+
+  /**
+   * Send a request to the MCP server
+   * @param {string} method - RPC method name
+   * @param {object} params - Method parameters
+   * @returns {Promise&lt;any>} Server response
+   */
+  // eslint-disable-next-line require-await
+  async sendRequest(method, params = {}) {
+    if (!this.connected) {
+      throw new Error('Not connected to MCP server');
+    }
+
+    const id = ++this.requestId;
+    const request = {
+      jsonrpc: '2.0',
+      id,
+      method,
+      params,
+    };
+
+    return new Promise((resolve, reject) => {
+      this.pendingRequests.set(id, { resolve, reject });
+
+      const message = JSON.stringify(request) + '\n';
+      this.process.stdin.write(message);
+
+      // Timeout after 30 seconds
+      setTimeout(() => {
+        if (this.pendingRequests.has(id)) {
+          this.pendingRequests.delete(id);
+          reject(new Error('Request timeout'));
+        }
+      }, 30000);
+    });
+  }
+
+  /**
+   * List available MCP tools
+   * @returns {Promise&lt;Array>} List of available tools
+   */
+  // eslint-disable-next-line require-await
+  async listTools() {
+    return this.sendRequest('tools/list');
+  }
+
+  /**
+   * Call an MCP tool
+   * @param {string} name - Tool name
+   * @param {object} args - Tool arguments
+   * @returns {Promise&lt;any>} Tool execution result
+   */
+  // eslint-disable-next-line require-await
+  async callTool(name, args = {}) {
+    return this.sendRequest('tools/call', { name, arguments: args });
+  }
+
+  /**
+   * Get Members of European Parliament
+   * @param {object} options - Filter options
+   * @param {string} options.country - ISO country code
+   * @param {string} options.group - Political group
+   * @param {number} options.limit - Result limit
+   * @returns {Promise&lt;Array>} List of MEPs
+   */
+  // eslint-disable-next-line require-await
+  async getMEPs(options = {}) {
+    return this.callTool('get_meps', options);
+  }
+
+  /**
+   * Get plenary sessions
+   * @param {object} options - Filter options
+   * @param {string} options.startDate - Start date (YYYY-MM-DD)
+   * @param {string} options.endDate - End date (YYYY-MM-DD)
+   * @param {number} options.limit - Result limit
+   * @returns {Promise&lt;object>} Plenary sessions data
+   */
+  async getPlenarySessions(options = {}) {
+    try {
+      return await this.callTool('get_plenary_sessions', options);
+    } catch (error) {
+      // Tool might not be implemented yet, return empty array
+      console.warn('get_plenary_sessions not available:', error.message);
+      return { content: [{ type: 'text', text: '{"sessions": []}' }] };
+    }
+  }
+
+  /**
+   * Search legislative documents
+   * @param {object} options - Search options
+   * @param {string} options.query - Search query
+   * @param {string} options.type - Document type
+   * @param {number} options.limit - Result limit
+   * @returns {Promise&lt;object>} Search results
+   */
+  async searchDocuments(options = {}) {
+    try {
+      return await this.callTool('search_documents', options);
+    } catch (error) {
+      // Tool might not be implemented yet, return empty array
+      console.warn('search_documents not available:', error.message);
+      return { content: [{ type: 'text', text: '{"documents": []}' }] };
+    }
+  }
+
+  /**
+   * Get parliamentary questions
+   * @param {object} options - Filter options
+   * @param {string} options.type - Question type (written/oral)
+   * @param {string} options.startDate - Start date
+   * @param {number} options.limit - Result limit
+   * @returns {Promise&lt;object>} Parliamentary questions data
+   */
+  async getParliamentaryQuestions(options = {}) {
+    try {
+      return await this.callTool('get_parliamentary_questions', options);
+    } catch (error) {
+      // Tool might not be implemented yet, return empty array
+      console.warn('get_parliamentary_questions not available:', error.message);
+      return { content: [{ type: 'text', text: '{"questions": []}' }] };
+    }
+  }
+}
+
+// Export singleton instance
+let clientInstance = null;
+
+export async function getEPMCPClient(options = {}) {
+  if (!clientInstance) {
+    clientInstance = new EuropeanParliamentMCPClient(options);
+    await clientInstance.connect();
+  }
+  return clientInstance;
+}
+
+export async function closeEPMCPClient() {
+  if (clientInstance) {
+    await clientInstance.disconnect();
+    clientInstance = null;
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Wed Feb 18 2026 01:10:16 GMT+0000 (Coordinated Universal Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
