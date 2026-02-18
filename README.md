@@ -1,49 +1,51 @@
-# EU Parliament Monitor
-
 <p align="center">
-  <strong>European Parliament Intelligence Platform - Monitor political activity with systematic transparency</strong>
+  <img src="https://hack23.com/icon-192.png" alt="Hack23 Logo" width="192" height="192">
 </p>
 
-## Security & Compliance Badges
+<h1 align="center">🏛️ EU Parliament Monitor</h1>
 
 <p align="center">
-  <a href="https://scorecard.dev/viewer/?uri=github.com/Hack23/euparliamentmonitor"><img src="https://api.securityscorecards.dev/projects/github.com/Hack23/euparliamentmonitor/badge" alt="OpenSSF Scorecard"/></a>
-  <a href="https://bestpractices.coreinfrastructure.org/projects/XXXXX"><img src="https://bestpractices.coreinfrastructure.org/projects/XXXXX/badge" alt="CII Best Practices"/></a>
-  <a href="https://github.com/Hack23/euparliamentmonitor/attestations/"><img src="https://slsa.dev/images/gh-badge-level3.svg" alt="SLSA 3"/></a>
+  <strong>European Parliament Intelligence Platform</strong><br>
+  <em>Monitor political activity with systematic transparency</em>
 </p>
 
 <p align="center">
-  <a href="https://sonarcloud.io/dashboard?id=Hack23_euparliamentmonitor"><img src="https://sonarcloud.io/api/project_badges/measure?project=Hack23_euparliamentmonitor&metric=alert_status" alt="Quality Gate"/></a>
-  <a href="https://app.fossa.com/projects/git%2Bgithub.com%2FHack23%2Feuparliamentmonitor"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2FHack23%2Feuparliamentmonitor.svg?type=shield" alt="FOSSA Status"/></a>
-  <a href="https://api.reuse.software/info/github.com/Hack23/euparliamentmonitor"><img src="https://api.reuse.software/badge/github.com/Hack23/euparliamentmonitor" alt="REUSE Compliance"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Owner-CEO-0A66C2?style=for-the-badge" alt="Owner"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Version-1.0-555?style=for-the-badge" alt="Version"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Classification-Public-success?style=for-the-badge" alt="Classification"/></a>
+  <a href="#"><img src="https://img.shields.io/badge/Review-Annual-orange?style=for-the-badge" alt="Review Cycle"/></a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/Hack23/euparliamentmonitor/actions?query=workflow%3ACodeQL"><img src="https://github.com/Hack23/euparliamentmonitor/workflows/CodeQL/badge.svg" alt="CodeQL"/></a>
-  <a href="https://github.com/Hack23/euparliamentmonitor/security/dependabot"><img src="https://img.shields.io/badge/Dependabot-enabled-success.svg" alt="Dependabot"/></a>
-  <a href="https://opensource.org/licenses/Apache-2.0"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"/></a>
-</p>
+## 🎯 Status Badges
 
-### Security Posture Evidence
+### Workflow Status
+[![News Generation](https://github.com/Hack23/euparliamentmonitor/actions/workflows/news-generation.yml/badge.svg)](https://github.com/Hack23/euparliamentmonitor/actions/workflows/news-generation.yml)
+[![CodeQL](https://github.com/Hack23/euparliamentmonitor/actions/workflows/codeql.yml/badge.svg)](https://github.com/Hack23/euparliamentmonitor/actions/workflows/codeql.yml)
+[![Test and Report](https://github.com/Hack23/euparliamentmonitor/actions/workflows/test-and-report.yml/badge.svg)](https://github.com/Hack23/euparliamentmonitor/actions/workflows/test-and-report.yml)
+[![Release](https://github.com/Hack23/euparliamentmonitor/actions/workflows/release.yml/badge.svg)](https://github.com/Hack23/euparliamentmonitor/actions/workflows/release.yml)
+[![E2E Tests](https://github.com/Hack23/euparliamentmonitor/actions/workflows/e2e.yml/badge.svg)](https://github.com/Hack23/euparliamentmonitor/actions/workflows/e2e.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/Hack23/euparliamentmonitor/badge)](https://scorecard.dev/viewer/?uri=github.com/Hack23/euparliamentmonitor)
 
-EU Parliament Monitor demonstrates security excellence through **public, verifiable evidence** per [Hack23 ISMS Open Source Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Open_Source_Policy.md):
+### Documentation & Reports
+[![API Docs](https://img.shields.io/badge/API-Documentation-blue?logo=javascript)](https://hack23.github.io/euparliamentmonitor/docs/api/)
+[![Coverage](https://img.shields.io/badge/Coverage-82%25-green?logo=vitest)](https://hack23.github.io/euparliamentmonitor/docs/coverage/)
+[![E2E Report](https://img.shields.io/badge/E2E-Report-purple?logo=playwright)](https://hack23.github.io/euparliamentmonitor/playwright-report/)
+[![SLSA 3](https://img.shields.io/badge/SLSA-Level%203-brightgreen?logo=github)](https://github.com/Hack23/euparliamentmonitor/attestations)
 
-| Badge | Status | Description | Target |
-|-------|--------|-------------|--------|
-| **OpenSSF Scorecard** | 🎯 In Progress | Supply chain security score | ≥7.0 |
-| **CII Best Practices** | 📝 Registration Pending | Open source best practices compliance | Passing |
-| **SLSA Level 3** | ✅ Implemented | Build provenance and attestations | Level 3 |
-| **SonarCloud** | 📝 Setup Required | Code quality and security analysis | Passing |
-| **FOSSA** | 📝 Setup Required | License compliance scanning | Clean |
-| **REUSE** | ✅ Implemented | License header compliance | Passing |
-| **CodeQL** | ✅ Active | Static application security testing (SAST) | 0 critical/high |
-| **Dependabot** | ✅ Active | Dependency vulnerability scanning (SCA) | 0 vulnerabilities |
+## 📚 Documentation Hub
 
-**Next Steps**:
-1. Complete OpenSSF Scorecard optimization (branch protection, code review)
-2. Register and complete CII Best Practices questionnaire
-3. Enable SonarCloud integration (requires `SONAR_TOKEN` secret)
-4. Enable FOSSA license scanning (requires FOSSA account)
+**📖 Quick Links:**
+- [📘 Architecture Documentation](SECURITY_ARCHITECTURE.md) - Complete security architecture with C4 diagrams
+- [📗 Security Flows](FLOWCHART.md) - Process flows with security controls
+- [📙 Data Model](DATA_MODEL.md) - Data structures and API integration
+- [📕 Release Process](docs/RELEASE_PROCESS.md) - How to create releases
+- [📔 API Documentation](https://hack23.github.io/euparliamentmonitor/docs/api/) - JSDoc-generated API reference
+- [📓 Test Coverage](https://hack23.github.io/euparliamentmonitor/docs/coverage/) - Interactive coverage report
+
+**🔒 ISMS Compliance:**
+- [🛡️ Hack23 ISMS Framework](https://github.com/Hack23/ISMS-PUBLIC) - Information Security Management System
+- [🔐 Secure Development Policy](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md) - Development standards
+- [📋 Classification Framework](https://github.com/Hack23/ISMS-PUBLIC/blob/main/CLASSIFICATION.md) - CIA triad classification
 
 ## Current Status
 
@@ -463,6 +465,7 @@ and quality assurance:
 - **Security Checks**: npm audit for vulnerabilities
 - **Workflow**: `.github/workflows/test-and-report.yml`
 
+**📊 Evidence:** See [Workflow Status Badges](#-status-badges) at top of README.
 ### Workflow Status Badges
 
 **Core Workflows:**
@@ -492,10 +495,51 @@ To create a new release:
 3. Enter version (e.g., `v1.0.0`)
 4. Select if pre-release
 5. The workflow will:
-   - Run validation and tests
-   - Generate SBOM and attestations
+   - Run validation and tests (169 unit tests, E2E tests)
+   - Generate API documentation (JSDoc)
+   - Generate test coverage reports (Vitest HTML)
+   - Generate E2E test reports (Playwright)
+   - Create documentation index
+   - Commit documentation to main branch
+   - Generate SBOM and attestations (SLSA Level 3)
    - Create GitHub release with artifacts
    - Update release notes automatically
+
+**🔒 ISMS Evidence:**
+- [Release Workflow](.github/workflows/release.yml) - Complete automation
+- [SLSA Attestations](https://github.com/Hack23/euparliamentmonitor/attestations) - Build provenance
+- [Release Process Guide](docs/RELEASE_PROCESS.md) - Step-by-step documentation
+
+### Documentation as Code
+
+Every release automatically generates comprehensive documentation:
+
+| Documentation | Description | Link |
+|--------------|-------------|------|
+| **API Documentation** | JSDoc-generated API reference (52 files) | [View Docs](https://hack23.github.io/euparliamentmonitor/docs/api/) |
+| **Test Coverage** | Interactive Vitest coverage reports (82%+) | [View Coverage](https://hack23.github.io/euparliamentmonitor/docs/coverage/) |
+| **E2E Test Reports** | Playwright test results with screenshots | [View Report](https://hack23.github.io/euparliamentmonitor/playwright-report/) |
+| **Documentation Index** | Beautiful hub linking all reports | [View Index](https://hack23.github.io/euparliamentmonitor/docs/) |
+
+**📋 How It Works:**
+1. Release workflow runs all tests
+2. Generates API docs with JSDoc
+3. Copies coverage reports to `docs/`
+4. Creates documentation index page
+5. Commits everything to `main` branch
+6. Documentation is version-controlled and traceable
+
+**🎯 Run Locally:**
+```bash
+npm run docs:generate  # Generate all documentation
+npm run docs:api       # Generate API docs only
+npm run docs:index     # Generate index page
+```
+
+**🔒 ISMS Compliance:**
+- Documentation-as-code follows [Hack23 ISMS Secure Development Policy §3.2](https://github.com/Hack23/ISMS-PUBLIC/blob/main/Secure_Development_Policy.md#32-architecture-documentation)
+- All releases include complete documentation evidence
+- Documentation committed to repository for full auditability
 
 ### Setting Up Labels
 

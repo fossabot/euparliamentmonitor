@@ -40,6 +40,9 @@ export default defineConfig({
         'scripts/generate-news-enhanced.js',
         'scripts/generate-news-indexes.js',
         'scripts/generate-sitemap.js',
+        // Exclude documentation generation scripts (utility scripts)
+        'scripts/generate-docs-index.js',
+        'scripts/copy-test-reports.js',
       ],
     },
     
