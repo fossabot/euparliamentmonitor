@@ -2,10 +2,10 @@
 
 /**
  * Generate Documentation Index
- * 
+ *
  * Creates an index.html page in the docs/ directory that links to all
  * generated documentation and test reports.
- * 
+ *
  * @module scripts/generate-docs-index
  */
 
@@ -20,12 +20,12 @@ const DOCS_DIR = join(ROOT_DIR, 'docs');
 
 /**
  * Generate the documentation index HTML
- * 
+ *
  * @returns {string} HTML content for the documentation index
  */
 function generateIndexHTML() {
   const currentDate = new Date().toISOString().split('T')[0];
-  
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -257,18 +257,17 @@ function generateIndexHTML() {
  */
 async function main() {
   console.log('📚 Generating documentation index...');
-  
+
   try {
     // Ensure docs directory exists
     await fs.mkdir(DOCS_DIR, { recursive: true });
-    
+
     // Generate and write index.html
     const indexHTML = generateIndexHTML();
     const indexPath = join(DOCS_DIR, 'index.html');
     await fs.writeFile(indexPath, indexHTML, 'utf8');
-    
+
     console.log(`✅ Documentation index generated: ${indexPath}`);
-    
   } catch (error) {
     console.error('❌ Error generating documentation index:', error.message);
     process.exit(1);
@@ -276,7 +275,7 @@ async function main() {
 }
 
 // Run if executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] === __filename) {
   main();
 }
 

@@ -2,10 +2,10 @@
 
 /**
  * Copy Test Reports to Documentation Directory
- * 
+ *
  * This script copies all test reports and coverage data to the docs/ directory
  * for inclusion in the documentation bundle.
- * 
+ *
  * @module scripts/copy-test-reports
  */
 
@@ -20,7 +20,7 @@ const DOCS_DIR = join(ROOT_DIR, 'docs');
 
 /**
  * Recursively copy directory
- * 
+ *
  * @param {string} src - Source directory
  * @param {string} dest - Destination directory
  */
@@ -28,14 +28,14 @@ async function copyDirectory(src, dest) {
   try {
     // Create destination directory
     await fs.mkdir(dest, { recursive: true });
-    
+
     // Read source directory
     const entries = await fs.readdir(src, { withFileTypes: true });
-    
+
     for (const entry of entries) {
       const srcPath = join(src, entry.name);
       const destPath = join(dest, entry.name);
-      
+
       if (entry.isDirectory()) {
         await copyDirectory(srcPath, destPath);
       } else {
@@ -52,7 +52,7 @@ async function copyDirectory(src, dest) {
 
 /**
  * Create a simple HTML index for test results
- * 
+ *
  * @returns {string} HTML content
  */
 function createTestResultsIndex() {
@@ -93,30 +93,25 @@ function createTestResultsIndex() {
  */
 async function main() {
   console.log('📋 Copying test reports to documentation directory...');
-  
+
   try {
     // Ensure docs directory exists
     await fs.mkdir(DOCS_DIR, { recursive: true });
-    
+
     // Copy coverage report
     const coverageSrc = join(ROOT_DIR, 'coverage');
     const coverageDest = join(DOCS_DIR, 'coverage');
     console.log('  📊 Copying coverage report...');
     await copyDirectory(coverageSrc, coverageDest);
     console.log('  ✅ Coverage report copied');
-    
+
     // Create test-results directory with index
     const testResultsDir = join(DOCS_DIR, 'test-results');
     await fs.mkdir(testResultsDir, { recursive: true });
-    await fs.writeFile(
-      join(testResultsDir, 'index.html'),
-      createTestResultsIndex(),
-      'utf8'
-    );
+    await fs.writeFile(join(testResultsDir, 'index.html'), createTestResultsIndex(), 'utf8');
     console.log('  ✅ Test results index created');
-    
+
     console.log('✅ All test reports copied successfully');
-    
   } catch (error) {
     console.error('❌ Error copying test reports:', error.message);
     process.exit(1);
@@ -124,7 +119,7 @@ async function main() {
 }
 
 // Run if executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] === __filename) {
   main();
 }
 

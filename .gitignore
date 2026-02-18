@@ -32,6 +32,8 @@ coverage/
 # Documentation (generated, committed only on releases)
 # docs/ folder is committed as part of release workflow
 # but excluded from normal commits to avoid clutter
+docs/api/
+docs/coverage/
 
 # Playwright test results
 playwright-report/
